@@ -98,14 +98,14 @@ def generate_url(filename, date_str, categories):
             category = categories[0]
         else:
             # 根据文件名判断分类
-            category = "其他"  # 默认分类
+            category = "others"  # 默认分类
             
-            if '前端' in article_name or 'react' in article_name.lower() or 'nextjs' in article_name.lower() or 'threejs' in article_name.lower() or 'openlayers' in article_name.lower():
-                category = "前端"
-            elif '后端' in article_name or 'docker' in article_name.lower() or 'pm2' in article_name.lower() or '宝塔' in article_name or 'ubuntu' in article_name.lower():
-                category = "后端"
-            elif '工具' in article_name or 'maven' in article_name.lower() or 'mysql' in article_name.lower():
-                category = "工具"
+            if 'frontend' in article_name.lower() or 'react' in article_name.lower() or 'nextjs' in article_name.lower() or 'threejs' in article_name.lower() or 'openlayers' in article_name.lower():
+                category = "frontend"
+            elif 'backend' in article_name.lower() or 'docker' in article_name.lower() or 'pm2' in article_name.lower() or 'ubuntu' in article_name.lower():
+                category = "backend"
+            elif 'tools' in article_name.lower() or 'maven' in article_name.lower() or 'mysql' in article_name.lower():
+                category = "tools"
         
         return f"/{category}/{year}/{month:0>2}/{day:0>2}/{article_name}.html"
     
@@ -115,9 +115,15 @@ def generate_url(filename, date_str, categories):
 def process_posts():
     """处理所有博客文章"""
     posts = []
+    post_files = []
     
-    # 处理主目录下的文章
-    post_files = glob.glob('_posts/*.md')
+    # 分类文件夹（英文）
+    category_folders = ['frontend', 'backend', 'tools', 'others']
+    
+    # 处理分类文件夹下的文章
+    for folder in category_folders:
+        folder_files = glob.glob(f'_posts/{folder}/*.md')
+        post_files.extend(folder_files)
     
     # 处理web子目录下的文章
     web_post_files = glob.glob('_posts/web/*.md')
@@ -136,7 +142,7 @@ def process_posts():
             # 获取基本信息
             title = front_matter.get('title', '')
             date = front_matter.get('date', '')
-            categories = front_matter.get('categories', ['其他'])
+            categories = front_matter.get('categories', ['others'])
             tags = front_matter.get('tags', [])
             
             # 如果categories是字符串，转换为列表
@@ -146,6 +152,8 @@ def process_posts():
             # 如果tags是字符串，转换为列表
             if isinstance(tags, str):
                 tags = [tags]
+            
+            # 分类已经是英文，无需映射
             
             # 提取摘要
             excerpt = extract_excerpt(content)

@@ -1,0 +1,20 @@
+current directory: /Users/shatang/work1/zhangshuming0870.github.io/vendor/bundle/ruby/3.2.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/Users/shatang/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/shatang/work1/zhangshuming0870.github.io/vendor/bundle/ruby/3.2.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20260211-86984-hljsc sitelibdir\=./.gem.20260211-86984-hljsc clean
+
+current directory: /Users/shatang/work1/zhangshuming0870.github.io/vendor/bundle/ruby/3.2.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20260211-86984-hljsc sitelibdir\=./.gem.20260211-86984-hljsc
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/shatang/work1/zhangshuming0870.github.io/vendor/bundle/ruby/3.2.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20260211-86984-hljsc sitelibdir\=./.gem.20260211-86984-hljsc install
+/opt/homebrew/bin/ginstall -c -m 0755 fastfilereaderext.bundle ./.gem.20260211-86984-hljsc
+
+current directory: /Users/shatang/work1/zhangshuming0870.github.io/vendor/bundle/ruby/3.2.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20260211-86984-hljsc sitelibdir\=./.gem.20260211-86984-hljsc clean

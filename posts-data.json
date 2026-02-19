@@ -1,295 +1,151 @@
 {
   "posts": [
     {
-      "title": "Next.js 项目部署到 Cloudflare Pages 问题排查指南",
-      "excerpt": "本文档记录了将 Next.js 15 项目部署到 Cloudflare Pages 过程中遇到的各种问题及其解决方案。 - 框架: Next.js 15.4.6 - React: 19.1.0 - 部署平台: Cloudflare Pages - CI/CD: GitHub Actions - 构建工具: @cloudflare/next-on-pages@1.13.16 --- - packag...",
-      "url": "/其他/2025/09/23/deployment-troubleshooting.html",
-      "date": "2025-09-23",
+      "title": "从零开始开发Web3 DApp：智能合约+前端完整实战",
+      "excerpt": "本教程将带你从零开始，使用Solidity、Hardhat和React构建一个完整的去中心化应用（DApp）。我们将创建一个简单的投票系统，涵盖智能合约开发、测试、部署和前端集成。 构建一个去中心化投票DApp，功能包括： - 创建投票提案 - 投票功能 - 查看投票结果 - 使用MetaMask钱包连接 - 实时更新投票状态 选择： - Create a JavaScript project -...",
+      "url": "/others/2025/11/26/web3-blockchain.html",
+      "date": "2025-11-26",
       "categories": [
-        "其他"
+        "others"
       ],
       "tags": [
-        "Next.js",
-        "Cloudflare Pages",
-        "GitHub Actions",
-        "部署问题"
+        "Web3",
+        "智能合约",
+        "Solidity",
+        "Hardhat",
+        "以太坊",
+        "实战教程"
       ]
     },
     {
-      "title": "nextjs 打包过程中遇到的问题",
-      "excerpt": "在使用 Next.js App Router 时，当组件中使用了 useSearchParams() hook 而没有正确包装在 Suspense 边界中时，会出现以下错误： 从 Next.js 15 开始，所有使用客户端 hooks（如 useSearchParams、useRouter 等）的组件都必须包装在 Suspense 边界中。这是因为： - 服务端渲染 (SSR): 这些 hooks...",
-      "url": "/前端/2025/08/11/gis.html",
-      "date": "2025-04-01",
+      "title": "Kubernetes实战：从Docker到生产部署完整指南",
+      "excerpt": "本教程将带你从零开始，学习如何将应用容器化、部署到Kubernetes集群，并实现自动化CI/CD流程。我们将构建一个完整的Node.js应用，并完成从开发到生产的全流程。 - 将Node.js应用容器化 - 部署到本地Kubernetes集群 - 配置Service和Ingress - 实现滚动更新 - 设置健康检查 - 配置资源限制 创建 app.js： 创建 package.json 脚本：...",
+      "url": "/others/2025/09/14/cloud-native-kubernetes.html",
+      "date": "2025-09-14",
       "categories": [
-        "前端"
+        "others"
       ],
       "tags": [
-        "nextjs",
-        "错误处理"
+        "Kubernetes",
+        "Docker",
+        "容器化",
+        "部署",
+        "实战教程"
       ]
     },
     {
-      "title": "nextjs 打包过程中遇到的问题",
-      "excerpt": "在使用 Next.js App Router 时，当组件中使用了 useSearchParams() hook 而没有正确包装在 Suspense 边界中时，会出现以下错误： 从 Next.js 15 开始，所有使用客户端 hooks（如 useSearchParams、useRouter 等）的组件都必须包装在 Suspense 边界中。这是因为： - 服务端渲染 (SSR): 这些 hooks...",
-      "url": "/前端/2025/04/01/nextjs-build-error1.html",
-      "date": "2025-04-01",
+      "title": "机器学习模型部署实战：从训练到生产环境完整流程",
+      "excerpt": "本教程将带你完成一个完整的机器学习项目，从模型训练到生产部署。我们将构建一个图像分类API，使用Flask部署，并通过Docker容器化，最终部署到云服务器。 构建一个完整的ML部署系统： - 模型训练：使用TensorFlow训练图像分类模型 - API服务：Flask RESTful API - 模型版本管理：支持多版本模型切换 - 容器化部署：Docker部署 - 性能监控：请求日志和性能指...",
+      "url": "/others/2025/08/20/ml-model-deployment.html",
+      "date": "2025-08-20",
       "categories": [
-        "前端"
+        "others"
       ],
       "tags": [
-        "nextjs",
-        "错误处理"
+        "机器学习",
+        "模型部署",
+        "Flask",
+        "Docker",
+        "实战教程"
       ]
     },
     {
-      "title": "git lfs",
-      "excerpt": "在生产环境中，bedroom页面访问缓慢，原因是Git仓库中包含了大量大文件： - 视频文件：taikong.mp4 (57MB), taikong3.mp4 (111MB) 等 - HDR文件：多个25MB+的HDR全景图像文件 - 3D模型文件：GLTF、纹理和二进制文件 - 音频文件：多个音频文件（WAV、MP3、FLAC） 这些文件导致Git仓库大小超过700MB，推送时出现HTTP 40...",
-      "url": "/其他/2025/03/29/gitlfs.html",
-      "date": "2025-03-29",
+      "title": "用Rust构建高性能Web API：从零到部署实战",
+      "excerpt": "本教程将带你使用Rust和Actix-web框架，从零开始构建一个完整的RESTful API服务，包括数据库集成、认证授权、错误处理等生产级功能。 构建一个待办事项（Todo）API，功能包括： - 用户注册和登录 - JWT认证 - CRUD操作（创建、读取、更新、删除） - 数据库持久化 - 输入验证 - 错误处理 编辑 Cargo.toml： 创建以下目录和文件： 创建 migration...",
+      "url": "/others/2025/07/08/rust-modern-development.html",
+      "date": "2025-07-08",
       "categories": [
-        "其他"
+        "others"
       ],
       "tags": [
-        "git",
-        "git lfs"
+        "Rust",
+        "Web开发",
+        "Actix-web",
+        "实战教程"
+      ]
+    },
+    {
+      "title": "实时通信实战：WebSocket + Server-Sent Events完整实现",
+      "excerpt": "本教程将带你构建一个完整的实时通信系统，包括WebSocket聊天室和Server-Sent Events实时数据推送。我们将使用Node.js、Socket.io和原生SSE实现双向和单向实时通信。 构建一个实时通信应用，包含： - WebSocket聊天室：多用户实时聊天 - SSE数据推送：实时股票价格推送 - 房间管理：创建和加入聊天室 - 用户管理：用户登录和状态 - 消息历史：保存和加...",
+      "url": "/backend/2025/06/15/realtime-communication.html",
+      "date": "2025-06-15",
+      "categories": [
+        "backend"
+      ],
+      "tags": [
+        "WebSocket",
+        "SSE",
+        "实时通信",
+        "Node.js",
+        "实战教程"
+      ]
+    },
+    {
+      "title": "30分钟搭建RAG智能问答系统：完整实战教程",
+      "excerpt": "本教程将带你从零开始，使用LangChain和Chroma构建一个完整的RAG（检索增强生成）智能问答系统。系统能够基于你的文档库回答问题，非常适合构建知识库助手、文档问答等应用。 构建一个能够： - 读取本地文档（Markdown、PDF、TXT等） - 将文档向量化存储 - 根据用户问题检索相关文档 - 基于检索内容生成准确回答 - 提供Web界面交互 创建 requirements.txt：...",
+      "url": "/others/2025/05/22/llm-application-development.html",
+      "date": "2025-05-22",
+      "categories": [
+        "others"
+      ],
+      "tags": [
+        "LLM",
+        "RAG",
+        "LangChain",
+        "向量数据库",
+        "实战教程"
+      ]
+    },
+    {
+      "title": "微前端架构实战：使用Module Federation构建可扩展应用",
+      "excerpt": "本教程将带你使用Webpack 5的Module Federation功能，从零开始构建一个完整的微前端应用。我们将创建一个主应用和多个子应用，实现独立开发、独立部署的微前端架构。 构建一个包含以下模块的微前端应用： - 主应用（Host）：应用入口和路由管理 - 用户模块（Remote）：用户管理功能 - 商品模块（Remote）：商品展示功能 - 订单模块（Remote）：订单管理功能 每个模...",
+      "url": "/frontend/2025/04/10/micro-frontend-practice.html",
+      "date": "2025-04-10",
+      "categories": [
+        "frontend"
+      ],
+      "tags": [
+        "微前端",
+        "Module Federation",
+        "Webpack",
+        "架构",
+        "实战教程"
+      ]
+    },
+    {
+      "title": "从零开始构建AI Agent：实战教程",
+      "excerpt": "本文将带你从零开始，使用LangChain构建一个能够搜索网络、执行代码、操作文件的AI Agent。我们将构建一个能够自主完成复杂任务的智能助手。 创建 .env 文件： 在代码中加载： 创建 agent.py 文件： 你会看到Agent的思考过程： 1. 使用搜索工具查找信息 2. 分析搜索结果 3. 创建文件并写入内容 添加更多实用工具： 让Agent记住对话历史： 创建一个专门用于数据分析...",
+      "url": "/others/2025/03/18/ai-agent-guide.html",
+      "date": "2025-03-18",
+      "categories": [
+        "others"
+      ],
+      "tags": [
+        "AI Agent",
+        "LangChain",
+        "实战教程",
+        "Python"
       ]
     },
     {
       "title": "币圈各种网站",
       "excerpt": "1. 币圈各种网站 --- - gmgn.ai: https://gmgn.ai/?chain=sol&ref=uOUVbxFX - 币圈安全指南: https://docs.gmgn.ai/cn/an-quan-ti-shi",
-      "url": "/工具/2025/03/12/bi.html",
+      "url": "/tools/2025/03/12/bi.html",
       "date": "2025-03-12",
       "categories": [
-        "工具"
+        "tools"
       ],
       "tags": [
         "站点"
       ]
     },
     {
-      "title": "threejs 各种形状的添加",
-      "excerpt": "本文档详细介绍Three.js中各种几何体的创建方法和参数含义，帮助开发者快速掌握3D形状的创建技巧。 - 基础几何体 - 复杂几何体 - 自定义几何体 - 材质和渲染 - 实用技巧 参数说明： - width: 宽度（X轴） - height: 高度（Y轴） - depth: 深度（Z轴） - widthSegments: 宽度分段数（可选） - heightSegments: 高度分段数（可选...",
-      "url": "/前端/2025/02/17/threejs-shapes.html",
-      "date": "2025-02-17",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "前端",
-        "threejs"
-      ]
-    },
-    {
-      "title": "Maven 使用教程 - 从入门到精通",
-      "excerpt": "Maven 是一个强大的项目管理和构建工具，主要用于 Java 项目。它提供了一套标准化的项目结构、依赖管理和构建生命周期。 - 标准化项目结构：统一的目录布局 - 依赖管理：自动下载和管理项目依赖 - 构建生命周期：标准化的构建流程 - 插件机制：丰富的插件生态系统 - 多模块支持：支持大型项目的模块化管理 - Java JDK 8 或更高版本 - 操作系统：Windows、macOS、Linu...",
-      "url": "/工具/2024/12/19/maven-tutorial.html",
-      "date": "2024-12-19",
-      "categories": [
-        "工具"
-      ],
-      "tags": [
-        "Maven",
-        "Java",
-        "构建工具",
-        "项目管理"
-      ]
-    },
-    {
-      "title": "react-dom-client.development.js:6698 Uncaught Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:",
-      "excerpt": "react-dom-client.development.js:6698 Uncaught Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons: 1. You ...",
-      "url": "/前端/2024/09/15/q5.html",
-      "date": "2024-09-15",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "问题解决"
-      ]
-    },
-    {
-      "title": "Uncaught TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__.createContext) is not a function",
-      "excerpt": "Uncaught TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$...",
-      "url": "/前端/2024/09/15/q4.html",
-      "date": "2024-09-15",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "问题解决"
-      ]
-    },
-    {
-      "title": "\"Error: useNavigate() may be used only in the context of a <Router> component..",
-      "excerpt": "Error: useNavigate() may be used only in the context of a component. - nextjs - react - typescript !错误截图 3D 页面没有正确导入 ThreeScene 组件，而且您的项目混合使用了 Next.js App Router 和 React Router，这导致了冲突。 !错误截图1",
-      "url": "/前端/2024/09/15/q3.html",
-      "date": "2024-09-15",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "问题解决"
-      ]
-    },
-    {
-      "title": "\"Failed to execute 'insertBefore' on 'Node': The node before which the new node is to be inserted is not a child of this node.",
-      "excerpt": "Refused to execute script from 'http://localhost:3000/panoramicMap/bundle.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled. - nextjs - react - typesc...",
-      "url": "/前端/2024/09/15/q2.html",
-      "date": "2024-09-15",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "问题解决"
-      ]
-    },
-    {
-      "title": "Mac 下 MySQL 使用指南",
-      "excerpt": "1. 访问 MySQL 官网 下载适用于 macOS 的 DMG 安装包。 2. 按照安装向导完成安装。 - 打开“系统偏好设置” > “MySQL”，点击“Start MySQL Server”。 如果终端输入 mysql 提示找不到命令，可以将 MySQL 的 bin 目录加入环境变量： - 登录 MySQL： - 修改 root 密码： - 查看所有数据库： - 创建数据库： - 退出 My...",
-      "url": "/其他/2024/09/10/mac-mysql-guide.html",
-      "date": "2024-09-10",
-      "categories": [
-        "其他"
-      ],
-      "tags": [
-        "MySQL",
-        "Mac"
-      ]
-    },
-    {
-      "title": "Mac上Brew环境变量问题解决方案",
-      "excerpt": "在Mac系统上，发现brew命令无法使用，同时基本的系统命令（如cat、ls等）也无法正常执行。通过检查发现是环境变量PATH配置出现了严重问题。 输出结果： 问题分析： - PATH变量被错误地设置为$PATH而不是实际的路径值 - 缺少系统基本路径（如/usr/bin、/bin等） - 这导致系统无法找到基本命令 输出结果： 问题分析： - 第115行有一个错误的sed命令（从错误信息推断） ...",
-      "url": "/其他/2024/07/30/mac-brew-environment-fix.html",
-      "date": "2024-07-30 11:00:00 +0800",
-      "categories": [
-        "其他"
-      ],
-      "tags": [
-        "brew",
-        "homebrew",
-        "环境变量",
-        "PATH",
-        "zsh",
-        "macOS"
-      ]
-    },
-    {
-      "title": "Ubuntu 安装宝塔面板教程",
-      "excerpt": "1. 宝塔面板简介 2. 安装前准备 3. 安装步骤 4. 常见问题 --- 宝塔面板是一款简单好用的服务器运维管理面板，支持一键部署 LNMP/LAMP、网站、数据库、FTP 等，极大简化了服务器管理。 - 一台已安装 Ubuntu 系统的服务器（建议 Ubuntu 18.04/20.04/22.04） - 拥有 root 权限 - 保证服务器联网 安装过程中会提示设置面板端口、账号和密码，请根...",
-      "url": "/后端/2024/06/12/ubuntu-bt-panel.html",
-      "date": "2024-06-12",
-      "categories": [
-        "后端"
-      ],
-      "tags": [
-        "宝塔",
-        "Ubuntu",
-        "面板",
-        "运维"
-      ]
-    },
-    {
-      "title": "pm2 使用方式",
-      "excerpt": "1. pm2 简介 2. 安装 pm2 3. 常用命令 4. 进程管理 5. 日志查看 6. 开机自启 7. 常见问题 --- pm2 是一个带有负载均衡功能的 Node.js 进程管理器，支持进程守护、自动重启、日志管理等功能，适用于生产环境。 全局安装 pm2： 在项目目录下运行 -i max 会根据 CPU 核心数自动启动多个实例。 新建 ecosystem.config.js： 启动： 查...",
-      "url": "/后端/2024/06/12/pm2-usage.html",
-      "date": "2024-06-12",
-      "categories": [
-        "后端"
-      ],
-      "tags": [
-        "pm2",
-        "Node.js",
-        "进程管理"
-      ]
-    },
-    {
-      "title": "各种问题汇总",
-      "excerpt": "!1 修改了.git 配置文件 !2 继续报了这个错 !3 发现是有个3.3G的视频文件，将视频移除后提交成功 --- 输入这个代码解决 --- 执行 根据自己实际的路径 --- 执行安装 添加环境变量 升级brew --- !4 改变文件类型为可删除，再删除即可",
-      "url": "/其他/2023/09/12/question.html",
-      "date": "2023-09-12",
-      "categories": [
-        "其他"
-      ],
-      "tags": [
-        "问题"
-      ]
-    },
-    {
-      "title": "react问题汇总",
-      "excerpt": "手动添加google检测工具 nextjs 的script是服务端动态添加的，没有被渲染也正常",
-      "url": "/前端/2024/06/01/react-question.html",
-      "date": "2023-09-12",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "react",
-        "nextjs"
-      ]
-    },
-    {
-      "title": "openlayers-quick-tools FlyTo工具",
-      "excerpt": "{: .lead} FlyTo 是一个强大的 OpenLayers 飞行动画工具类，提供了多种地图视图动画功能，让您的地图交互更加流畅和生动。 {: .toc} TOC {:toc} FlyTo 工具类提供了以下主要功能： - 坐标飞行: 飞行到指定坐标点 - 缩放飞行: 飞行到指定缩放级别 - 边界框飞行: 飞行到边界框范围 - 要素飞行: 飞行到单个或多个要素 - 平滑动画: 平滑缩放和平移 ...",
-      "url": "/前端/2023/08/02/openlayers-quick-tools-flyto.html",
-      "date": "2023-08-02",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "openlayers-quick-tools",
-        "flyto"
-      ]
-    },
-    {
-      "title": "openlayers-quick-tools MoveController工具",
-      "excerpt": "MoveController 是一个简单易用的 OpenLayers 物体移动控制工具类，提供了多种移动动画功能，让您可以轻松控制地图上要素的移动效果。支持基于时间（duration）和基于速度（speed）两种移动模式。 - ✅ 直线移动: 要素直接移动到目标坐标 - ✅ 基于速度移动: 根据距离和速度自动计算持续时间 - ✅ 路径移动: 沿指定路径移动，支持循环和反向 - ✅ 圆形移动: 要素...",
-      "url": "/前端/2023/07/04/openlayers-quick-tools-move.html",
-      "date": "2023-07-04",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "openlayers-quick-tools"
-      ]
-    },
-    {
-      "title": "Jekyll 本地启动常见问题与解决全记录",
-      "excerpt": "> 本文记录了在 macOS 上本地启动 Jekyll 博客时遇到的 Ruby 版本、bundler 依赖等问题的完整排查与解决过程，适合新手参考。 在终端执行 bundle install 时，报错如下： 尝试安装 bundler 2.6.9，又遇到如下报错： macOS 自带的 Ruby 版本较低（2.6.10），而项目依赖的 bundler 2.6.9 需要 Ruby >= 3.1.0。 直...",
-      "url": "/其他/2023/07/04/jekyll-startup.html",
-      "date": "2023-07-04",
-      "categories": [
-        "其他"
-      ],
-      "tags": [
-        "jekyll",
-        "Ruby",
-        "rbenv",
-        "bundler",
-        "折腾记录",
-        "环境配置"
-      ]
-    },
-    {
-      "title": "Markdown 使用指南",
-      "excerpt": "这是一篇展示 Markdown 各种功能的示例文章。让我们来看看 Markdown 的强大功能！ 这是粗体文本，这是斜体文本，这是粗斜体文本。 这是行内代码，这是 ~~删除线~~ 文本。 > 这是一段引用文本 > > 这是引用的第二段 > > 这是嵌套引用 - 项目 1 - 项目 2 - 子项目 2.1 - 子项目 2.2 - 项目 3 1. 第一步 2. 第二步 1. 子步骤 2.1 2. 子步...",
-      "url": "/其他/2023/06/04/test.html",
-      "date": "2023-06-04",
-      "categories": [
-        "其他"
-      ],
-      "tags": [
-        "markdown",
-        "教程",
-        "文档编写",
-        "示例"
-      ]
-    },
-    {
       "title": "本地项目docker部署",
       "excerpt": "1. Docker安装 2. Docker基础概念 3. 项目Docker化 4. 生产环境打包部署 5. 开发环境配置 6. 常见问题与解决方案 7. 最佳实践 --- 1. 访问 Docker官网 2. 下载macOS版本的Docker Desktop 3. 双击安装包进行安装 4. 启动Docker Desktop --- 1. Dockerfile - 镜像构建脚本 2. Docker I...",
-      "url": "/后端/2023/04/07/docker.html",
+      "url": "/backend/2023/04/07/docker.html",
       "date": "2023-04-07",
       "categories": [
-        "后端"
+        "backend"
       ],
       "tags": [
         "docker",
@@ -297,97 +153,12 @@
       ]
     },
     {
-      "title": "宝塔docker部署",
-      "excerpt": "1. 服务器环境准备 2. yum安装node失败 --- 本文档详细记录了使用宝塔面板部署Docker容器的完整流程，可作为团队部署参考。",
-      "url": "/后端/2023/04/13/docker-baota.html",
-      "date": "2023-04-07",
-      "categories": [
-        "后端"
-      ],
-      "tags": [
-        "docker",
-        "宝塔"
-      ]
-    },
-    {
-      "title": "Mac权限管理完全指南：从基础到高级操作",
-      "excerpt": "> 本文全面介绍macOS权限系统，从基础概念到高级操作，帮助用户更好地理解和管理Mac系统的各种权限。 macOS采用基于Unix的权限系统，主要包括： - 文件权限：控制文件的读、写、执行权限 - 用户权限：用户账户的权限级别 - 应用权限：应用程序访问系统资源的权限 - 网络权限：网络访问和数据传输的权限 macOS文件权限分为三种： - 读权限 (r)：可以查看文件内容 - 写权限 (w)...",
-      "url": "/其他/2023/01/15/mac-permissions-guide.html",
-      "date": "2023-01-15",
-      "categories": [
-        "其他"
-      ],
-      "tags": [
-        "macOS",
-        "权限管理",
-        "系统安全",
-        "终端操作",
-        "chmod",
-        "chown",
-        "文件权限"
-      ]
-    },
-    {
-      "title": "本地npm link调试方法指南",
-      "excerpt": "在开发npm包时，npm link 是实现本地调试和联调的高效工具。它允许我们在不发布到npm registry的情况下，将本地包直接链接到测试项目中进行实时调试。本文将以OpenLayers相关项目为例，重点介绍如何使用npm link进行本地包的调试和联调。 假设你正在开发一个npm包（如 openlayers-quick-tools），首先在包项目目录下执行： 此命令会将当前包链接到全局no...",
-      "url": "/前端/2023/01/20/npm-link-local-package-testing.html",
-      "date": "2023-01-15",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "npm",
-        "本地开发",
-        "包测试"
-      ]
-    },
-    {
-      "title": "深入理解 rem 单位：原理与实战",
-      "excerpt": "在前端开发中，rem（root em）单位因其强大的响应式能力和易维护性，成为现代网页布局的首选单位之一。那么，rem 到底是什么？它是如何工作的？又该如何在项目中高效使用？本文将带你全面了解 rem 单位的原理、用法及最佳实践。 rem 是 CSS 中的一种相对长度单位，其全称为 root em，即\"根 em\"。与传统的 em 单位不同，rem 始终相对于 HTML 根元素（通常是 ` 标签）的...",
-      "url": "/前端/2022/06/12/rem.html",
-      "date": "2022-06-12",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "css",
-        "rem",
-        "响应式设计",
-        "前端开发"
-      ]
-    },
-    {
-      "title": "常见问题",
-      "excerpt": "1. Windows问题 2. Ubuntu问题 3. CentOS问题 --- --- --- --- 1. 使用netstat或lsof查看端口占用 2. 确认占用进程的PID 3. 使用ps命令查看进程详细信息 4. 使用kill命令终止进程 5. 验证端口是否已释放 1. 检查包管理器缓存是否需要更新 2. 确认软件包名称是否正确 3. 检查是否有依赖冲突 4. 清理包管理器缓存 5. 使...",
-      "url": "/其他/2022/06/12/common.html",
-      "date": "2022-06-12",
-      "categories": [
-        "其他"
-      ],
-      "tags": [
-        "常见问题"
-      ]
-    },
-    {
-      "title": "nginx常见问题",
-      "excerpt": "1. Windows 2. Ubuntu 3. CentOS 4. 问题汇总 5. 配置 --- --- --- --- !nginx配置截图 nginx配置相关截图 --- nginx的配置文件采用模块化的结构，主要包含以下部分：",
-      "url": "/前端/2022/06/12/nginx.html",
-      "date": "2022-06-12",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "nginx",
-        "常见问题"
-      ]
-    },
-    {
       "title": "收录各种好玩的网站",
       "excerpt": "1. 3D类 2. 相机 3. AI 4. 视频 5. 图片 6. 前端工具 7. 实用工具 8. 学习资源 9. 技术网站 --- - 东京3D地铁: https://minitokyo3d.com/ - 全球各地相机: https://drivenlisten.com/city/# - AI图片素材库: https://chatimg.ai/zh/gallery?category=art - ...",
-      "url": "/工具/2022/02/12/funny-site.html",
+      "url": "/tools/2022/02/12/funny-site.html",
       "date": "2022-02-12",
       "categories": [
-        "工具"
+        "tools"
       ],
       "tags": [
         "站点"
@@ -395,24 +166,11 @@
     },
     {
       "title": "工具集",
-      "excerpt": "1. brew --- 控制台输入 环境变量生效",
-      "url": "/其他/2022/02/12/mac.html",
-      "date": "2022-02-12",
-      "categories": [
-        "其他"
-      ],
-      "tags": [
-        "mac",
-        "命令大全"
-      ]
-    },
-    {
-      "title": "工具集",
       "excerpt": "1. AI工具 2. 图片工具 3. 数据库工具 4. 浏览器插件 5. 下载工具 6. git资源 7. 爬虫工具 --- - Pollo AI: https://pollo.ai/zh/pricing - Veo3： https://openart.ai/video/i2v/veo3?gad_source=1&gad_campaignid=22795382774&gbraid=0AAAAA-y...",
-      "url": "/工具/2022/02/12/tools.html",
+      "url": "/tools/2022/02/12/tools.html",
       "date": "2022-02-12",
       "categories": [
-        "工具"
+        "tools"
       ],
       "tags": [
         "站点"
@@ -421,40 +179,14 @@
     {
       "title": "阮一峰老师的技术文档合集",
       "excerpt": "1. 阮一峰技术文档 --- - Git教程: https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html - JavaScript教程: https://www.ruanyifeng.com/blog/2011/06/javascript_tutorial.html - CSS教程: https://www.ruanyifeng.co...",
-      "url": "/工具/2022/01/09/ruanyifeng.html",
+      "url": "/tools/2022/01/09/ruanyifeng.html",
       "date": "2022-01-09",
       "categories": [
-        "工具"
+        "tools"
       ],
       "tags": [
         "外部站点",
         "ruanyifeng"
-      ]
-    },
-    {
-      "title": "Refused to execute script from 'http://localhost:3000/panoramicMap/bundle.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.",
-      "excerpt": "Refused to execute script from 'http://localhost:3000/panoramicMap/bundle.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled. - webpack - react - types...",
-      "url": "/前端/2022/01/09/q1.html",
-      "date": "2021-05-06",
-      "categories": [
-        "前端"
-      ],
-      "tags": [
-        "问题解决"
-      ]
-    },
-    {
-      "title": "charles 破解",
-      "excerpt": "1. 第一步,下载charles 1. 第二部,生成key,这里使用的是java代码 1. 第三步,查看破解码 1. 第四步，破解 --- 下载charles",
-      "url": "/其他/2022/01/09/charlespojie.html",
-      "date": "2021-01-09",
-      "categories": [
-        "其他"
-      ],
-      "tags": [
-        "charles",
-        "抓包",
-        "破解"
       ]
     }
   ]

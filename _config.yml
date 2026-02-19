@@ -5,7 +5,6 @@ description: zhangshuming blog
 # Jekyll configuration
 plugins:
   - jekyll-sass-converter
-  - jekyll-watch
 
 # Exclude from processing
 exclude:
