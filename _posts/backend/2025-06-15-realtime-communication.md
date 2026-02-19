@@ -25,7 +25,7 @@ author: zhangshuming
 ### 1. 创建项目
 
 ```bash
-mkdir realtime-app
+mkdir realtime-app 
 cd realtime-app
 npm init -y
 ```
