@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Codex 与 Claude Code 使用指南：从入门到高效协作",
+      "excerpt": "Codex 和 Claude Code 都不只是“帮你补全代码”的聊天机器人。它们可以读取项目、搜索代码、修改文件、运行命令、执行测试，并根据结果继续修正。真正决定效果的，通常不是你用了哪个模型，而是你是否提供了清晰目标、项目约束和可执行的验收方式。 本文介绍两款工具的基础用法、核心配置、高效工作流与安全技巧。文中命令与功能依据官方文档整理，资料核对日期为 2026 年 8 月 4 日。 一次典型...",
+      "url": "/others/2026/08/04/codex-and-claude-code-guide.html",
+      "date": "2026-08-04",
+      "categories": [
+        "others"
+      ],
+      "tags": [
+        "Codex",
+        "Claude Code",
+        "AI编程",
+        "开发工具",
+        "使用技巧"
+      ]
+    },
+    {
       "title": "从零开始开发Web3 DApp：智能合约+前端完整实战",
       "excerpt": "本教程将带你从零开始，使用Solidity、Hardhat和React构建一个完整的去中心化应用（DApp）。我们将创建一个简单的投票系统，涵盖智能合约开发、测试、部署和前端集成。 构建一个去中心化投票DApp，功能包括： - 创建投票提案 - 投票功能 - 查看投票结果 - 使用MetaMask钱包连接 - 实时更新投票状态 选择： - Create a JavaScript project -...",
       "url": "/others/2025/11/26/web3-blockchain.html",

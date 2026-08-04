@@ -25,10 +25,6 @@ error.log
 *.swo
 .DS_Store
 
-# 文档文件（不需要在镜像中）
-*.md
-!README.md
-
 # 测试和开发文件
 test/
 spec/
