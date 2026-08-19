@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "zhangshuming技术博客",
   "scripts": {
-    "build": "python3 update_posts_data.py && gem install bundler && bundle install && bundle exec jekyll build",
+    "build": "bundle exec jekyll build",
+    "dev": "bundle exec jekyll serve --livereload",
     "start": "npx serve _site -p $PORT"
   },
   "engines": {
@@ -14,4 +15,3 @@
     "serve": "^14.2.1"
   }
 }
-

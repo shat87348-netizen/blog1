@@ -2,7 +2,8 @@
 layout: post
 title: "实时通信实战：WebSocket + Server-Sent Events完整实现"
 date: 2025-06-15
-categories: [backend]
+categories: [articles]
+permalink: /backend/2025/06/15/realtime-communication.html
 tags: [WebSocket, SSE, 实时通信, Node.js, 实战教程]
 author: zhangshuming
 ---

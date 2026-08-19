@@ -1,8 +1,10 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="zh-CN" data-theme="light">
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
@@ -76,6 +78,10 @@
             font-weight: bold;
             color: white;
             text-decoration: none;
+        }
+
+        .logo-short {
+            display: none;
         }
 
         .header-controls {
@@ -303,18 +309,13 @@
             box-shadow: 0 2px 8px var(--shadow-color);
         }
 
-        .category-frontend {
+        .category-articles {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
 
-        .category-backend {
+        .category-other {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-
-        .category-others {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
         }
 
@@ -375,7 +376,8 @@
 
         /* 分类选择器 */
         .category-selector {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 0.5rem;
             margin-bottom: 1rem;
             padding-bottom: 0.8rem;
@@ -392,8 +394,9 @@
             cursor: pointer;
             transition: all 0.2s ease;
             border: 1px solid var(--border-color);
-            flex: 1;
             justify-content: center;
+            color: var(--text-primary);
+            font: inherit;
         }
 
         .category-tab:hover {
@@ -453,6 +456,13 @@
             cursor: pointer;
             transition: all 0.2s ease;
             border: 1px solid var(--border-color);
+            font: inherit;
+        }
+
+        .tags-empty {
+            color: var(--text-secondary);
+            font-size: 0.72rem;
+            line-height: 1.6;
         }
 
         .tag-item:hover {
@@ -838,6 +848,14 @@
         }
 
         @media (max-width: 768px) {
+            .logo-full {
+                display: none;
+            }
+
+            .logo-short {
+                display: inline;
+            }
+
             body {
                 font-size: 13px;
             }
@@ -1205,7 +1223,10 @@
     <div class="header">
         <div class="header-content">
             <div>
-                <a href="/post.html" class="logo">zhangshuming技术博客</a>
+                <a href="/post.html" class="logo">
+                    <span class="logo-full">zhangshuming技术博客</span>
+                    <span class="logo-short">ZS Blog</span>
+                </a>
             </div>
             <div class="header-controls">
                 <div class="search-container">
@@ -1232,7 +1253,7 @@
                 <div class="post-categories">
                     <span class="category-label">分类：</span>
                     {% for category in page.categories %}
-                    <a href="/categories/{{ category | downcase }}/"
+                    <a href="{{ '/post.html' | relative_url }}?category={{ category | downcase }}"
                         class="category-tag category-{{ category | downcase }}">
                         {{ category }}
                     </a>
@@ -1258,9 +1279,6 @@
                 <div class="filtered-posts-container" id="filteredPostsContainer" style="display: none;">
                     <div class="filtered-posts-header">
                         <h2 class="filtered-posts-title" id="filteredPostsTitle">Frontend Articles</h2>
-                        <button class="back-to-article" onclick="showOriginalContent()">
-                            ← 返回文章
-                        </button>
                     </div>
                     <div class="filtered-posts-list" id="filteredPostsList">
                         <!-- 筛选后的文章列表将在这里显示 -->
@@ -1294,22 +1312,17 @@
 
                     <!-- 分类选择器 -->
                     <div class="category-selector">
-                        <div class="category-tab active" data-category="frontend">
-                            <span class="category-name">Frontend</span>
-                            <span class="category-count">{{ site.categories['frontend'].size }}</span>
-                        </div>
-                        <div class="category-tab" data-category="backend">
-                            <span class="category-name">Backend</span>
-                            <span class="category-count">{{ site.categories['backend'].size }}</span>
-                        </div>
-                        <div class="category-tab" data-category="tools">
-                            <span class="category-name">Tools</span>
-                            <span class="category-count">{{ site.categories['tools'].size }}</span>
-                        </div>
-                        <div class="category-tab" data-category="others">
-                            <span class="category-name">Others</span>
-                            <span class="category-count">{{ site.categories['others'].size }}</span>
-                        </div>
+                        <button type="button" class="category-tab active" data-category="all" data-label="全部文章">
+                            <span class="category-name">全部</span>
+                            <span class="category-count">{{ site.posts | size }}</span>
+                        </button>
+                        {% for category in site.data.categories %}
+                        {% assign category_slug = category.slug %}
+                        <button type="button" class="category-tab" data-category="{{ category.slug }}" data-label="{{ category.name }}">
+                            <span class="category-name">{{ category.name }}</span>
+                            <span class="category-count">{{ site.categories[category_slug] | size }}</span>
+                        </button>
+                        {% endfor %}
                     </div>
 
                     <!-- 标签选择器 -->
@@ -1330,30 +1343,41 @@
         <p>&copy; 2022 技术博客. 保留所有权利.</p>
     </footer>
 
+    <script id="blog-posts-data" type="application/json">
+        [
+        {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+        {% for post in sorted_posts %}
+            {
+                "title": {{ post.title | jsonify }},
+                "excerpt": {{ post.excerpt | strip_html | strip_newlines | truncate: 180 | jsonify }},
+                "url": {{ post.url | relative_url | jsonify }},
+                "date": {{ post.date | date: '%Y-%m-%d' | jsonify }},
+                "categories": {{ post.categories | jsonify }},
+                "tags": {% if post.tags %}{{ post.tags | jsonify }}{% else %}[]{% endif %}
+            }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+        ]
+    </script>
+
     <script>
-        // 文章数据 - 从JSON文件加载
+        // 文章数据由 Jekyll 在构建时直接写入页面，无需额外生成 JSON 文件。
         let blogPosts = [];
 
         // 加载文章数据
         async function loadBlogPosts() {
+            if (blogPosts.length > 0) {
+                return blogPosts;
+            }
+
             try {
-                const response = await fetch('/posts-data.json');
-                const data = await response.json();
-                blogPosts = data.posts;
+                const dataElement = document.getElementById('blog-posts-data');
+                blogPosts = JSON.parse(dataElement.textContent);
             } catch (error) {
                 console.error('加载文章数据失败:', error);
-                // 如果加载失败，使用默认数据
-                blogPosts = [
-                    {
-                        title: "Ubuntu 安装宝塔面板教程",
-                        excerpt: "宝塔面板是一款简单好用的服务器运维管理面板，支持一键部署 LNMP/LAMP、网站、数据库、FTP 等，极大简化了服务器管理。",
-                        url: "/2024/06/12/ubuntu-bt-panel.html",
-                        date: "2024-06-12",
-                        categories: ["Linux", "运维"],
-                        tags: ["宝塔", "Ubuntu", "面板", "运维"]
-                    }
-                ];
+                blogPosts = [];
             }
+
+            return blogPosts;
         }
 
         // Search functionality
@@ -1373,7 +1397,7 @@
             }
 
             const results = blogPosts.filter(post => {
-                const searchText = `${post.title} ${post.excerpt} ${post.categories.join(' ')} ${post.tags.join(' ')}`.toLowerCase();
+                const searchText = `${post.title} ${post.excerpt} ${(post.categories || []).join(' ')} ${(post.tags || []).join(' ')}`.toLowerCase();
                 return searchText.includes(query);
             });
 
@@ -1623,43 +1647,27 @@
 
         // 分类和标签功能
         function initializeCategoryAndTagEvents() {
-            
-            // 从posts-data.json加载文章数据
+            const categoryTabs = Array.from(document.querySelectorAll('.category-tab'));
+            const tagsList = document.getElementById('tagsList');
+
+            if (categoryTabs.length === 0 || !tagsList) {
+                return;
+            }
+
+            // 使用 Jekyll 内嵌的文章数据初始化筛选器。
             loadBlogPosts().then(() => {
-                
                 // 当前选中的分类和标签
-                // 默认显示第一个有文章的分类
-                let currentCategory = 'frontend';
+                const categories = categoryTabs.map(tab => tab.getAttribute('data-category'));
+                const requestedCategory = new URLSearchParams(window.location.search).get('category');
+                let currentCategory = categories.includes(requestedCategory) ? requestedCategory : 'all';
                 let currentTag = null;
-                
-                // 检查默认分类是否有文章，如果没有则选择第一个有文章的分类
-                const categoryPosts = blogPosts.filter(post => 
-                    post.categories && post.categories.includes(currentCategory)
-                );
-                if (categoryPosts.length === 0) {
-                    // 找到第一个有文章的分类（只考虑frontend、backend、tools、others）
-                    const categories = ['frontend', 'backend', 'tools', 'others'];
-                    for (const cat of categories) {
-                        const posts = blogPosts.filter(post => 
-                            post.categories && post.categories.includes(cat)
-                        );
-                        if (posts.length > 0) {
-                            currentCategory = cat;
-                            // 更新UI选中状态
-                            document.querySelectorAll('.category-tab').forEach(tab => {
-                                if (tab.getAttribute('data-category') === cat) {
-                                    tab.classList.add('active');
-                                } else {
-                                    tab.classList.remove('active');
-                                }
-                            });
-                            break;
-                        }
-                    }
-                }
+
+                categoryTabs.forEach(tab => {
+                    tab.classList.toggle('active', tab.getAttribute('data-category') === currentCategory);
+                });
 
                 // 分类点击事件
-                document.querySelectorAll('.category-tab').forEach(tab => {
+                categoryTabs.forEach(tab => {
                     tab.addEventListener('click', function () {
                         const category = this.getAttribute('data-category');
 
@@ -1670,6 +1678,14 @@
                         // 更新当前分类
                         currentCategory = category;
                         currentTag = null;
+
+                        const url = new URL(window.location.href);
+                        if (category === 'all') {
+                            url.searchParams.delete('category');
+                        } else {
+                            url.searchParams.set('category', category);
+                        }
+                        window.history.replaceState({}, '', url);
 
                         // 更新标签列表
                         updateTagsList(category, blogPosts);
@@ -1689,20 +1705,26 @@
 
         function updateTagsList(category, allPosts) {
             const tagsList = document.getElementById('tagsList');
-            const categoryPosts = allPosts.filter(post => 
-                post.categories && post.categories.includes(category)
-            );
+
+            if (category === 'all') {
+                tagsList.innerHTML = '<span class="tags-empty">选择一个分类后，可继续按标签筛选。</span>';
+                return;
+            }
+
+            const categoryPosts = category === 'all'
+                ? allPosts
+                : allPosts.filter(post => post.categories && post.categories.includes(category));
 
             // 收集该分类下的所有标签
             const tags = new Set();
             categoryPosts.forEach(post => {
-                post.tags.forEach(tag => tags.add(tag));
+                (post.tags || []).forEach(tag => tags.add(tag));
             });
 
             // 生成标签HTML
             let tagsHTML = '';
             tags.forEach(tag => {
-                tagsHTML += `<span class="tag-item" data-tag="${tag}">${tag}</span>`;
+                tagsHTML += `<button type="button" class="tag-item" data-tag="${tag}">${tag}</button>`;
             });
 
             tagsList.innerHTML = tagsHTML;
@@ -1729,12 +1751,12 @@
 
         function updatePostsList(category, tag, allPosts) {
             // 筛选文章（支持多分类，只要包含目标分类即可）
-            let filteredPosts = allPosts.filter(post => 
-                post.categories && post.categories.includes(category)
-            );
+            let filteredPosts = category === 'all'
+                ? allPosts
+                : allPosts.filter(post => post.categories && post.categories.includes(category));
 
             if (tag) {
-                filteredPosts = filteredPosts.filter(post => post.tags.includes(tag));
+                filteredPosts = filteredPosts.filter(post => (post.tags || []).includes(tag));
             }
 
             // 保存当前筛选结果并重置到第一页
@@ -1758,11 +1780,12 @@
             filteredContainer.style.display = 'block';
 
             // 更新标题
-            const categoryDisplayName = category.charAt(0).toUpperCase() + category.slice(1);
+            const activeTab = document.querySelector(`.category-tab[data-category="${category}"]`);
+            const categoryDisplayName = activeTab ? activeTab.getAttribute('data-label') : category;
             if (tag) {
-                filteredTitle.textContent = `${categoryDisplayName} - ${tag} (${posts.length} articles)`;
+                filteredTitle.textContent = `${categoryDisplayName} · ${tag}（${posts.length} 篇）`;
             } else {
-                filteredTitle.textContent = `${categoryDisplayName} Articles (${posts.length} articles)`;
+                filteredTitle.textContent = `${categoryDisplayName}（${posts.length} 篇）`;
             }
 
             // 显示分页后的文章

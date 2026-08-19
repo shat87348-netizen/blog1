@@ -2,7 +2,8 @@
 layout: post
 title: "微前端架构实战：使用Module Federation构建可扩展应用"
 date: 2025-04-10
-categories: [frontend]
+categories: [articles]
+permalink: /frontend/2025/04/10/micro-frontend-practice.html
 tags: [微前端, Module Federation, Webpack, 架构, 实战教程]
 author: zhangshuming
 ---

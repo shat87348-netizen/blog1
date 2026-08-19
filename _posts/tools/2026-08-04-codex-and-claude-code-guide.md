@@ -2,7 +2,8 @@
 layout: post
 title: "Codex 与 Claude Code 使用指南：从入门到高效协作"
 date: 2026-08-04
-categories: [others]
+categories: [tools]
+permalink: /others/2026/08/04/codex-and-claude-code-guide.html
 tags: [Codex, Claude Code, AI编程, 开发工具, 使用技巧]
 author: zhangshuming
 excerpt: "从安装、项目指令、权限控制到提示词、上下文管理和验证闭环，系统介绍 Codex 与 Claude Code 的高效使用方法。"
@@ -95,7 +96,7 @@ codex exec "运行测试，分析失败原因，但不要修改代码"
 
 # 验证命令
 
-- 修改文章后运行 `python3 update_posts_data.py`。
+- 修改文章后运行 `bundle exec jekyll build`。
 - 提交前运行 `docker compose up --build -d`。
 - 验证 `/post.html` 和新增文章 URL 返回 HTTP 200。
 

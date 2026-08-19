@@ -2,7 +2,8 @@
 layout: post
 title: "30分钟搭建RAG智能问答系统：完整实战教程"
 date: 2025-05-22
-categories: [others]
+categories: [other]
+permalink: /others/2025/05/22/llm-application-development.html
 tags: [LLM, RAG, LangChain, 向量数据库, 实战教程]
 author: zhangshuming
 ---

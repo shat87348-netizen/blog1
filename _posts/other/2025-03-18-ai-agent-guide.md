@@ -2,7 +2,8 @@
 layout: post
 title: "从零开始构建AI Agent：实战教程"
 date: 2025-03-18
-categories: [others]
+categories: [other]
+permalink: /others/2025/03/18/ai-agent-guide.html
 tags: [AI Agent, LangChain, 实战教程, Python]
 author: zhangshuming
 ---

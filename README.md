@@ -16,10 +16,20 @@
 - 第一页和最后一页快速跳转
 
 ### 使用方法
-1. 在文章列表页面，选择分类（前端、后端、其他、工具）
+1. 在文章列表页面选择全部文章或主题分类
 2. 可选择标签进行进一步筛选
 3. 使用分页控件浏览不同页面的文章
 4. 点击页码按钮或上一页/下一页按钮进行导航
+
+### 分类约定
+
+分类用于主导航，一篇文章只选一个主分类；更具体的技术点使用标签表达。
+
+| 分类 | 适用内容 |
+| --- | --- |
+| `articles` | 前端、后端、容器与工程实践等主体技术文章 |
+| `tools` | 开发工具、效率工作流与资源整理 |
+| `other` | AI、探索性主题与其他技术笔记 |
 
 ### 技术实现
 - 使用JavaScript实现客户端分页
@@ -35,8 +45,11 @@
 
 ## 文件结构
 - `_layouts/post.html` - 主要布局文件，包含分页逻辑
-- `posts-data.json` - 文章数据源
+- `_data/categories.yml` - 分类名称、顺序和说明
+- `_posts/<category>/` - 按主分类存放的文章
 - `css/style.scss` - 样式文件
+
+文章目录、分类、标签和搜索数据均由 Jekyll 的 `site.posts` 在构建时自动生成，不需要额外运行 Python 脚本。
 
 ## 部署说明
 
@@ -71,13 +84,31 @@
 
 ```bash
 # 安装依赖
-gem install bundler
 bundle install
-npm install
 
-# 启动本地服务器
-bundle exec jekyll serve
+# 启动带自动重载的本地服务器
+npm run dev
 
 # 构建静态站点
-bundle exec jekyll build
+npm run build
 ```
+
+### 新增文章
+
+在对应分类目录中创建 `_posts/<category>/YYYY-MM-DD-slug.md`：
+
+```yaml
+---
+layout: post
+title: "文章标题"
+date: 2026-08-18
+categories: [articles]
+tags: [JavaScript, 架构]
+author: zhangshuming
+excerpt: "一句话摘要，建议填写。"
+---
+```
+
+保存后，Jekyll 会自动更新文章列表、分类计数、标签筛选和搜索数据。
+
+如果是对已发布文章重新分类，请保留原 URL：在 front matter 中增加 `permalink`，避免历史链接失效。

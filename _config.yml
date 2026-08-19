@@ -1,6 +1,8 @@
 # Site settings
 title: zhangshuming Blog
 description: zhangshuming blog
+lang: zh-CN
+timezone: Asia/Shanghai
 
 # Jekyll configuration
 plugins:
@@ -15,3 +17,5 @@ exclude:
   - .git
   - .gitignore
   - README.md
+  - package.json
+  - package-lock.json

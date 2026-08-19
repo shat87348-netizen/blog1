@@ -4,7 +4,7 @@ ARG NGINX_IMAGE=docker.m.daocloud.io/library/nginx:stable
 FROM ${RUBY_IMAGE} AS builder
 
 RUN apt-get update \
-    && apt-get install --no-install-recommends -y build-essential python3 \
+    && apt-get install --no-install-recommends -y build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -14,12 +14,13 @@ RUN gem install bundler -v 2.6.9 \
     && bundle install
 
 COPY . .
-RUN python3 update_posts_data.py \
-    && bundle exec jekyll build
+RUN bundle exec jekyll build
 
 FROM ${NGINX_IMAGE}
 
-COPY --from=builder /app/_site /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/_site /usr/share/nginx/blog
+RUN chmod -R a+rX /usr/share/nginx/blog
 
 EXPOSE 80
 

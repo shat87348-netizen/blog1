@@ -2,7 +2,8 @@
 layout: post
 title: "Kubernetes实战：从Docker到生产部署完整指南"
 date: 2025-09-14
-categories: [others]
+categories: [articles]
+permalink: /others/2025/09/14/cloud-native-kubernetes.html
 tags: [Kubernetes, Docker, 容器化, 部署, 实战教程]
 author: zhangshuming
 ---

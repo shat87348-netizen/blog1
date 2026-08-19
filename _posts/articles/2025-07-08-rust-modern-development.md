@@ -2,7 +2,8 @@
 layout: post
 title: "用Rust构建高性能Web API：从零到部署实战"
 date: 2025-07-08
-categories: [others]
+categories: [articles]
+permalink: /others/2025/07/08/rust-modern-development.html
 tags: [Rust, Web开发, Actix-web, 实战教程]
 author: zhangshuming
 ---

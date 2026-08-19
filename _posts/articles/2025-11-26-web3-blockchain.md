@@ -2,7 +2,8 @@
 layout: post
 title: "从零开始开发Web3 DApp：智能合约+前端完整实战"
 date: 2025-11-26
-categories: [others]
+categories: [articles]
+permalink: /others/2025/11/26/web3-blockchain.html
 tags: [Web3, 智能合约, Solidity, Hardhat, 以太坊, 实战教程]
 author: zhangshuming
 ---

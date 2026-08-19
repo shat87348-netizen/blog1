@@ -1,0 +1,11 @@
+- slug: articles
+  name: Articles
+  description: 前端、后端与工程实践
+
+- slug: tools
+  name: Tools
+  description: 开发工具、效率工作流与资源整理
+
+- slug: other
+  name: Other
+  description: AI、探索性主题与其他技术笔记

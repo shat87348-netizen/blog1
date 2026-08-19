@@ -2,7 +2,8 @@
 layout: post
 title: "机器学习模型部署实战：从训练到生产环境完整流程"
 date: 2025-08-20
-categories: [others]
+categories: [other]
+permalink: /others/2025/08/20/ml-model-deployment.html
 tags: [机器学习, 模型部署, Flask, Docker, 实战教程]
 author: zhangshuming
 ---
